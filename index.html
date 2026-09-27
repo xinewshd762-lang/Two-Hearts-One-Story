@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ali ❤️ Hadia</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Inter,Arial,sans-serif;
+  color:#fff;
+  background:#050208;
+  overflow-x:hidden;
+  min-height:100vh;
+}
+
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-3;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(255,55,145,.18),transparent 24%),
+    radial-gradient(circle at 85% 18%,rgba(128,82,255,.18),transparent 25%),
+    radial-gradient(circle at 50% 75%,rgba(255,30,110,.10),transparent 30%),
+    linear-gradient(135deg,#050208,#100517 48%,#040107);
+}
+
+.stars,.hearts{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:-1;
+  overflow:hidden;
+}
+
+.star{
+  position:absolute;
+  width:2px;
+  height:2px;
+  background:#fff;
+  border-radius:50%;
+  opacity:.7;
+  animation:twinkle 2.5s infinite alternate;
+}
+
+@keyframes twinkle{
+  to{opacity:.15;transform:scale(.4)}
+}
+
+.heart{
+  position:absolute;
+  bottom:-40px;
+  font-size:18px;
+  opacity:.65;
+  animation:float 8s linear infinite;
+}
+
+@keyframes float{
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  10%{opacity:.7}
+  100%{transform:translateY(-110vh) rotate(360deg);opacity:0}
+}
+
+nav{
+  position:fixed;
+  top:16px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:20;
+  width:min(92%,850px);
+  padding:12px 18px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(8,4,14,.55);
+  backdrop-filter:blur(18px);
+  border-radius:30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 18px 70px rgba(0,0,0,.45),
+             inset 0 1px rgba(255,255,255,.08);
+}
+
+.logo{
+  font-weight:800;
+  letter-spacing:1.5px;
+}
+
+.logo span{
+  color:#ff69aa;
+}
+
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  opacity:.82;
+  margin-left:18px;
+}
+
+nav a:hover{
+  color:#ff8fbd;
+}
+
+section{
+  width:min(1050px,92%);
+  margin:auto;
+}
+
+.hero{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:100px 0 60px;
+  position:relative;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:min(70vw,650px);
+  height:min(70vw,650px);
+  border-radius:50%;
+  border:1px solid rgba(255,119,174,.12);
+  box-shadow:
+    0 0 100px rgba(255,58,143,.10),
+    inset 0 0 80px rgba(145,80,255,.08);
+  z-index:-1;
+  animation:orb 8s ease-in-out infinite;
+}
+
+@keyframes orb{
+  50%{
+    transform:scale(1.05) rotate(3deg);
+    opacity:.7;
+  }
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:50px;
+  border:1px solid #ff77ae55;
+  background:#ff4f9820;
+  color:#ffb3d1;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+h1{
+  font-size:clamp(55px,13vw,125px);
+  line-height:.9;
+  margin:25px 0 18px;
+  font-weight:900;
+  letter-spacing:-5px;
+  background:linear-gradient(
+    90deg,
+    #fff,
+    #ff9bc7,
+    #c9a7ff,
+    #fff
+  );
+  -webkit-background-clip:text;
+  color:transparent;
+  filter:drop-shadow(0 0 28px #ff4b9a55);
+  text-shadow:0 0 45px rgba(255,72,158,.25);
+}
+
+.hero p{
+  font-size:clamp(17px,3vw,22px);
+  color:#d9c8df;
+  max-width:720px;
+  margin:auto;
+  line-height:1.7;
+}
+
+.btn{
+  margin-top:30px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:15px 24px;
+  border-radius:50px;
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  border:1px solid rgba(255,255,255,.16);
+  background:linear-gradient(135deg,#ff3f8f,#8e4dff);
+  box-shadow:
+    0 12px 45px rgba(255,50,140,.25),
+    inset 0 1px rgba(255,255,255,.25);
+  transition:.25s;
+  cursor:pointer;
+}
+
+.btn:hover{
+  transform:translateY(-3px) scale(1.02);
+  box-shadow:0 15px 45px #ff398066;
+}
+
+.glass{
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.085),
+    rgba(255,255,255,.025)
+  );
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:28px;
+  backdrop-filter:blur(18px);
+  box-shadow:
+    0 28px 80px rgba(0,0,0,.38),
+    inset 0 1px rgba(255,255,255,.08);
+}
+
+.section{
+  padding:90px 0;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.title h2{
+  font-size:clamp(32px,6vw,55px);
+  margin-bottom:10px;
+  font-weight:850;
+  letter-spacing:-1.5px;
+}
+
+.title p{
+  color:#bcaec4;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  padding:28px;
+  min-height:190px;
+  transition:.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card:before,
+.memory:before{
+  content:"";
+  position:absolute;
+  inset:-1px;
+  background:linear-gradient(
+    120deg,
+    transparent 20%,
+    rgba(255,255,255,.07),
+    transparent 60%
+  );
+  transform:translateX(-120%);
+  transition:transform .7s;
+}
+
+.card:hover:before,
+.memory:hover:before{
+  transform:translateX(120%);
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.015);
+  border-color:#ff73ac66;
+}
+
+.icon{
+  font-size:34px;
+  margin-bottom:20px;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card p{
+  color:#bcaec4;
+  line-height:1.7;
+}
+
+.letter{
+  padding:clamp(25px,6vw,55px);
+  position:relative;
+  overflow:hidden;
+  max-width:900px;
+  margin:auto;
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      rgba(255,80,160,.08),
+      transparent 25%
+    ),
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.09),
+      rgba(255,255,255,.025)
+    );
+}
+
+.letter:after{
+  content:"❤";
+  position:absolute;
+  font-size:180px;
+  right:-35px;
+  bottom:-75px;
+  color:#ff5b9c0c;
+}
+
+.letter p{
+  font-family:Georgia,serif;
+  font-size:clamp(17px,2.6vw,21px);
+  line-height:2;
+  color:#eadfeb;
+}
+
+.signature{
+  margin-top:28px;
+  color:#ff9bc4;
+  font-weight:bold;
+  font-size:20px;
+  font-family:Georgia,serif;
+  font-style:italic;
+}
+
+.memories{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+}
+
+.memory{
+  aspect-ratio:1;
+  min-height:220px;
+  border-radius:22px;
+  border:1px solid #ffffff14;
+  background:linear-gradient(145deg,#28112e,#130a20);
+  display:grid;
+  place-items:center;
+  text-align:center;
+  padding:20px;
+  overflow:hidden;
+  position:relative;
+  transition:.35s;
+}
+
+.memory:hover{
+  transform:translateY(-8px) rotate(-.5deg);
+  border-color:rgba(255,110,175,.35);
+}
+
+.memory span{
+  font-size:50px;
+}
+
+.memory p{
+  color:#cbbbd1;
+  margin-top:10px;
+}
+
+.question{
+  text-align:center;
+  padding:55px 25px;
+  overflow:hidden;
+  position:relative;
+}
+
+.question:before{
+  content:"";
+  position:absolute;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:rgba(255,55,145,.10);
+  filter:blur(50px);
+  left:-80px;
+  top:-80px;
+}
+
+.question h2{
+  font-size:clamp(32px,7vw,65px);
+  margin-bottom:14px;
+}
+
+.question p{
+  color:#cbbbd1;
+  line-height:1.7;
+}
+
+.yes{
+  font-size:17px;
+  padding:17px 30px;
+}
+
+footer{
+  text-align:center;
+  padding:45px 20px;
+  color:#8e7f98;
+  font-size:13px;
+  letter-spacing:.5px;
+}
+
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translate(-50%,120px);
+  z-index:50;
+  padding:14px 20px;
+  border-radius:50px;
+  background:#fff;
+  color:#24102c;
+  font-weight:700;
+  transition:.5s;
+  box-shadow:0 10px 40px #0008;
+}
+
+.toast.show{
+  transform:translate(-50%,0);
+}
+
+#burst{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  z-index:40;
+}
+
+.spark{
+  position:absolute;
+  font-size:24px;
+  animation:burst 1.6s ease-out forwards;
+}
+
+@keyframes burst{
+  from{
+    transform:translate(0,0) scale(.4);
+    opacity:1;
+  }
+  to{
+    transform:
+      translate(var(--x),var(--y))
+      scale(1.3)
+      rotate(360deg);
+    opacity:0;
+  }
+}
+
+@media(max-width:700px){
+  nav a{
+    display:none;
+  }
+
+  .cards,
+  .memories{
+    grid-template-columns:1fr;
+  }
+
+  .card{
+    min-height:auto;
+  }
+
+  .section{
+    padding:65px 0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="stars" id="stars"></div>
+<div class="hearts" id="hearts"></div>
+<div id="burst"></div>
+
+<nav>
+  <div class="logo">
+    ALI <span>❤</span> HADIA
+  </div>
+
+  <div>
+    <a href="#story">Story</a>
+    <a href="#letter">Letter</a>
+    <a href="#question">Forever</a>
+  </div>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+
+  <div>
+
+    <span class="badge">
+      A little website from Ali
+    </span>
+
+    <h1>
+      Hadia ❤️
+    </h1>
+
+    <p id="heroText">
+      Some feelings are too beautiful to fit into a simple message…
+      so Ali made you a little place on the internet.
+    </p>
+
+    <div style="
+      margin-top:18px;
+      color:#9f90aa;
+      font-size:12px;
+      letter-spacing:1.5px;
+      text-transform:uppercase;
+    ">
+      No photos needed • Just feelings
+    </div>
+
+    <a class="btn" href="#story">
+      Open My Heart 💌
+    </a>
+
+  </div>
+
+</section>
+
+
+<!-- STORY -->
+<section class="section" id="story">
+
+  <div class="title">
+
+    <h2>
+      Why You’re Special ✨
+    </h2>
+
+    <p>
+      Three little reasons… and honestly, there are many more.
+    </p>
+
+  </div>
+
+
+  <div class="cards">
+
+    <div class="card glass">
+
+      <div class="icon">
+        🌸
+      </div>
+
+      <h3>
+        Your Smile
+      </h3>
+
+      <p>
+        There is something about your smile that can make
+        an ordinary moment feel special.
+      </p>
+
+    </div>
+
+
+    <div class="card glass">
+
+      <div class="icon">
+        ✨
+      </div>
+
+      <h3>
+        Your Presence
+      </h3>
+
+      <p>
+        Sometimes just knowing you are there makes
+        the whole day feel a little brighter.
+      </p>
+
+    </div>
+
+
+    <div class="card glass">
+
+      <div class="icon">
+        💖
+      </div>
+
+      <h3>
+        You
+      </h3>
+
+      <p>
+        No complicated reason. You are simply someone
+        Ali wants to keep close to his heart.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- LOVE LETTER -->
+<section class="section" id="letter">
+
+  <div class="title">
+
+    <h2>
+      A Letter For You 💌
+    </h2>
+
+    <p>
+      From Ali, with all his heart.
+    </p>
+
+  </div>
+
+
+  <div class="letter glass">
+
+    <p>
+
+      Dear Hadia,
+      <br><br>
+
+      I don't know if words can ever explain exactly
+      how special you are to me.
+
+      But I wanted to create this little corner of the
+      internet just to tell you one simple thing:
+
+      <strong>
+        you matter to me.
+      </strong>
+
+      <br><br>
+
+      In a world full of people, somehow my heart
+      noticed you.
+
+      And every time I think about you,
+      I find another reason to smile.
+
+      <br><br>
+
+      I don't promise a perfect story.
+
+      I only hope for a real one —
+      filled with honesty, respect, little memories,
+      laughter, and moments we can look back on
+      with a smile.
+
+      <br><br>
+
+      Thank you for being you. ❤️
+
+    </p>
+
+
+    <div class="signature">
+      — Ali ❤️
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+<section class="section">
+
+  <div class="title">
+
+    <h2>
+      Little Moments 🌙
+    </h2>
+
+    <p>
+      Little things that make a story beautiful.
+    </p>
+
+  </div>
+
+
+  <div class="memories">
+
+    <div class="memory glass">
+
+      <div>
+
+        <span>
+          🌹
+        </span>
+
+        <p>
+          A beautiful beginning
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="memory glass">
+
+      <div>
+
+        <span>
+          🌙
+        </span>
+
+        <p>
+          Late-night conversations
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="memory glass">
+
+      <div>
+
+        <span>
+          🫶
+        </span>
+
+        <p>
+          Memories worth keeping
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FINAL QUESTION -->
+<section class="section" id="question">
+
+  <div class="question glass">
+
+    <h2>
+      Hadia, one question… ❤️
+    </h2>
+
+    <p>
+      Would you like to be a special part of Ali’s story?
+    </p>
+
+    <button class="btn yes" onclick="celebrate()">
+      YES ❤️
+    </button>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+  Made with ❤️ by Ali — for Hadia
+</footer>
+
+
+<div class="toast" id="toast">
+  Hadia ❤️ You just made Ali smile!
+</div>
+
+
+<script>
+
+/* STARS */
+
+const stars =
+document.getElementById("stars");
+
+const hearts =
+document.getElementById("hearts");
+
+for(let i=0;i<90;i++){
+
+  let s =
+  document.createElement("i");
+
+  s.className="star";
+
+  s.style.left =
+  Math.random()*100+"%";
+
+  s.style.top =
+  Math.random()*100+"%";
+
+  s.style.animationDelay =
+  Math.random()*3+"s";
+
+  stars.appendChild(s);
+}
+
+
+/* FLOATING HEARTS */
+
+const emojis=[
+  "❤",
+  "💗",
+  "💕",
+  "💖",
+  "✨"
+];
+
+for(let i=0;i<22;i++){
+
+  let h =
+  document.createElement("div");
+
+  h.className="heart";
+
+  h.textContent =
+  emojis[i%emojis.length];
+
+  h.style.left =
+  Math.random()*100+"%";
+
+  h.style.animationDelay =
+  Math.random()*8+"s";
+
+  h.style.animationDuration =
+  (6+Math.random()*7)+"s";
+
+  hearts.appendChild(h);
+}
+
+
+/* YES BUTTON FIREWORK */
+
+function celebrate(){
+
+  const burst =
+  document.getElementById("burst");
+
+  for(let i=0;i<42;i++){
+
+    let s =
+    document.createElement("div");
+
+    s.className="spark";
+
+    s.textContent =
+    emojis[
+      Math.floor(
+        Math.random()*emojis.length
+      )
+    ];
+
+    s.style.left="50%";
+    s.style.top="55%";
+
+    s.style.setProperty(
+      "--x",
+      (Math.random()*1000-500)+"px"
+    );
+
+    s.style.setProperty(
+      "--y",
+      (Math.random()*800-400)+"px"
+    );
+
+    s.style.animationDelay =
+    (Math.random()*.25)+"s";
+
+    burst.appendChild(s);
+  }
+
+
+  const toast =
+  document.getElementById("toast");
+
+  toast.classList.add("show");
+
+  setTimeout(
+    ()=>{
+      toast.classList.remove("show");
+    },
+    3500
+  );
+
+  setTimeout(
+    ()=>{
+      burst.innerHTML="";
+    },
+    1800
+  );
+}
+
+
+/* TYPING EFFECT */
+
+const heroText =
+document.getElementById("heroText");
+
+if(heroText){
+
+  const text =
+  heroText.textContent;
+
+  heroText.textContent="";
+
+  let i=0;
+
+  const type=()=>{
+
+    if(i<text.length){
+
+      heroText.textContent +=
+      text[i++];
+
+      setTimeout(type,22);
+
+    }
+
+  };
+
+  setTimeout(type,500);
+}
+
+
+/* 3D CARD EFFECT */
+
+document
+.querySelectorAll(".card,.memory")
+.forEach(el=>{
+
+  el.addEventListener(
+    "mousemove",
+    e=>{
+
+      const r =
+      el.getBoundingClientRect();
+
+      const x =
+      (e.clientX-r.left) /
+      r.width - .5;
+
+      const y =
+      (e.clientY-r.top) /
+      r.height - .5;
+
+      el.style.transform =
+      `perspective(700px)
+       rotateX(${-y*3}deg)
+       rotateY(${x*4}deg)
+       translateY(-6px)`;
+    }
+  );
+
+
+  el.addEventListener(
+    "mouseleave",
+    ()=>{
+      el.style.transform="";
+    }
+  );
+
+});
+
+</script>
+
+</body>
+  </html>
